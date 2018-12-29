@@ -1,0 +1,9 @@
+site_name: theme test
+theme:
+  name: null
+  custom_dir: 'customtheme/'
+  highlightjs: true
+  hljs_style: github
+  hljs_languages:
+    - yaml
+    - bash

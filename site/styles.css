@@ -1,0 +1,13 @@
+.navtoc {
+	color: green;
+	float: left;
+	width: 20%;
+	padding: 10px;
+}
+
+.maincolumn {
+	color: red;
+	float:left;
+	width: 75%;
+	padding: 10px;
+}

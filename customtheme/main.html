@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{%- block styles %}
+	<link href="{{ 'styles.css'|url }}" rel="stylesheet">
+	<link href="{{ 'css/bootstrap.min.css'|url }}" rel="stylesheet">
+	<link href="{{ 'css/font-awesome.min.css'|url }}" rel="stylesheet">
+	<link href="{{ 'css/base.css'|url }}" rel="stylesheet">
+	{%- if config.theme.highlightjs %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{ config.theme.hljs_style }}.min.css">
+	{%- endif %}
+	{% endblock %}
+	<!--
+	 The page_title contains the title for a page as shown in the navigation.
+	 Site name contains the name as defined in the mkdocs.yml
+	-->
+	{%- block libs %}
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- <script src="{{ 'js/jquery-1.10.2.min.js'|url }}" defer></script>
+	<script src="{{ 'js/bootstrap.min.js'|url }}" defer></script>-->
+	{%- if config.theme.highlightjs %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	{%- for lang in config.theme.hljs_languages %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/{{lang}}.min.js"></script>
+	{%- endfor %}
+	<script>hljs.initHighlightingOnLoad();</script>
+	{%- endif %}
+	{%- endblock %}
+	<title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+</head>
+
+<body>
+	{% set mitdatum = dict()%}
+	{% set ohnedatum = dict()%}
+	{% for i in nav%}
+	{% if i.is_section %}
+
+	{%for kid in i.children%}
+	{%if kid.is_page%}
+	{%if kid.meta.date%}
+	{% set x=mitdatum.__setitem__(kid.meta.date,(kid.title,kid.url)) %}
+	{%else%}
+	{% set x=ohnedatum.__setitem__(kid.title,kid.url) %}
+	{%endif%}
+	{%endif%}
+	{%endfor%}
+	{% endif %}
+	{% endfor %}
+
+
+
+
+	<div class="navtoc">
+		<ul>
+			<li><a href="{{base_url|url}}">home</a></i>
+			{% for item in mitdatum|sort(reverse=True) %}
+			<li>
+				{{item.strftime('%d. %b %Y')}}<br>
+				<a href="{{mitdatum[item][1]|url}}">{{mitdatum[item][0]}}</a>
+			</li>
+			{%endfor%}
+
+			{% for item in ohnedatum|sort %}
+			<li>
+				undatiert<br>
+				<a href="{{ohnedatum[item]|url}}">{{item}}</a>
+			</li>
+			{%endfor%}
+		</ul>
+	</div>
+
+	<div class="maincolumn">
+		{{page.content}}
+	</div>
+
+
+
+
+
+</body>
