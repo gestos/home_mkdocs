@@ -27,7 +27,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
-	<title>E-Liquid Calculator - theme test</title>
+	<title>network printer client side config - theme test</title>
 </head>
 
 <body>
@@ -125,7 +125,7 @@
 			</li>
 			
 			<li class="blogpost_link">
-				<a href="./">E-Liquid Calculator</a>
+				<a href="../eliqrechner/">E-Liquid Calculator</a>
 				<br>
 				01. Sep 2018
 			</li>
@@ -137,7 +137,7 @@
 			</li>
 			
 			<li class="blogpost_link">
-				<a href="../2016-11-01-printer/">network printer client side config</a>
+				<a href="./">network printer client side config</a>
 				<br>
 				01. Nov 2016
 			</li>
@@ -166,10 +166,14 @@
 	</div>
 
 	<div class="maincolumn">
-		<div class="content_c">
-		<p>Hier ist ein <a href="https://gestos.de/liquidrechner/">E-Liquid-Rechner</a><br />
-So was gibt's <a href="http://e-liquid-recipes.com/create">anderswo</a> schon fast genausogut ;), aber der hiesige ist für meine Bedürfnisse angepasst.</p>
-		</div>
+		<p>Network cups server up and running, avahi-systemd client also detecting the printer and printing fine</p>
+<p>on the gentoo client however, no networked printer is detected. Quic solution for now:</p>
+<ul>
+<li>localhost:631 (attention: somehow I added a line to one of the numerous config files around that made me go directly to the print server address)</li>
+<li>add printer. for the correct https uri I just visited the server's cups interface server:631 and copied the link to the printer in the admin section (just: copy link address. this seems to bet the valid resource format)</li>
+<li>when given the choice for a ppd filter, NOT choosing a ppd is the important part. cups offers a "raw" ppd / queue. Ust this, assuming the correct ppd is already given on the server side.</li>
+<li>-&gt; works fine.</li>
+</ul>
 	</div>
 	</div>
 

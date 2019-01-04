@@ -5,6 +5,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="../../styles.css" rel="stylesheet">
+	<!-- <link href="../../codehilite.css" rel="stylesheet"> -->
 	<link href="../../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../../css/font-awesome.min.css" rel="stylesheet">
 	<link href="../../css/base.css" rel="stylesheet">
@@ -88,52 +89,75 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
 
 
 
+	<div class="header"></div>
+
+	<div class="main_frame">
 
 	<div class="navtoc">
 		<ul>
-			<li><a href="../../../..">home</a></i>
+			<li id="homelink"><a href="../../../..">home</a></i>
 			
-			<li>
-				28. Dec 2018<br>
+			<li class="blogpost_link">
+				<a href="../some_shell_tips/">some shell tips</a>
+				<br>
+				03. Jan 2019
+			</li>
+			
+			<li class="blogpost_link">
 				<a href="./">A4 printing</a>
+				<br>
+				28. Dec 2018
 			</li>
 			
-			<li>
-				20. Dec 2018<br>
+			<li class="blogpost_link">
 				<a href="../playlist_normalize/">playlist-converter</a>
+				<br>
+				20. Dec 2018
 			</li>
 			
-			<li>
-				01. Sep 2018<br>
+			<li class="blogpost_link">
 				<a href="../eliqrechner/">E-Liquid Calculator</a>
+				<br>
+				01. Sep 2018
 			</li>
 			
-			<li>
-				30. Jun 2018<br>
+			<li class="blogpost_link">
 				<a href="../Nebenzeiten_et_Agenten/">matplotlib stat generator</a>
+				<br>
+				30. Jun 2018
 			</li>
 			
-			<li>
-				01. Nov 2016<br>
+			<li class="blogpost_link">
 				<a href="../2016-11-01-printer/">network printer client side config</a>
+				<br>
+				01. Nov 2016
 			</li>
 			
-			<li>
-				15. May 2015<br>
+			<li class="blogpost_link">
 				<a href="../2015-05-15-mozilla-dekstop-download-directories/">Mozilla Dekstop Download Directories</a>
+				<br>
+				15. May 2015
 			</li>
 			
-			<li>
-				07. May 2015<br>
+			<li class="blogpost_link">
 				<a href="../2015-05-07-adjust-cursor-color-for-vim-and-urxvt/">adjust cursor color for vim and urxvt</a>
+				<br>
+				07. May 2015
 			</li>
 			
-			<li>
-				04. May 2015<br>
+			<li class="blogpost_link">
 				<a href="../2015-05-04-css-completion-in-vim/">css completion in vim</a>
+				<br>
+				04. May 2015
 			</li>
 			
 
@@ -142,17 +166,19 @@
 	</div>
 
 	<div class="maincolumn">
+		<div class="content_c">
 		<p>besides the css settings, firefox will need to be adjusted if one wants to use the full area of an A4 paper sheet.  </p>
 <p><a href="https://support.mozilla.org/en-US/questions/1061569">this</a> mozilla blog post is in the right direction, but there's a third configuration options for the margins called <strong><em>print.print_edge</em></strong>, see screenshot:
-<img alt="alt text" src="/images/printmargins_firefox.png" title="ff printmargins" /><br />
+<img class="full" src="/images/printmargins_firefox.png" alt="ff printmargins" />
 of course, the same options shown here for <strong><em>bottom</em></strong> can be set for <strong><em>top</em></strong>, <strong><em>left</em></strong> and <strong><em>right</em></strong> as well.</p>
 <p>it seems like the relevant options are the <em>print.print_unwriteable_margin_</em> options, but that may depend on which printer you select for the print preview. There seems to be no well-structured mozilla authorized manual for this stuff and I'm too lazy to dig deeper into it right now.
 setting all of those to zero will give you the full page for printing, but will also remove the page count in the formerly "unwriteable" top right corner.</p>
 <p><a href="https://wiki.mozilla.org/Firefox:Printing_and_Page_Setup">more mozilla on this topic</a></p>
 <p>since I don't want the page counter removed just for the one use case that I'm fiddling with, I set the top margin to 20. The numbers seem to refer to the percenteage of an inch (see link above). I checked manually, the counter won't appear below a top margin of 20, which seems stupid, because it will respect that margin, leaving blank margin to the page edge...</p>
 <p>Also, I changed the A4 width + height settings in my css to a value slightly lower than standard (200mm instead of 210mm width, 290mm instead of 297mm height). The "real" standard measurements seem to cause a page break even with all margins set to zero. Using these slightly smaller values however works ok.</p>
+		</div>
 	</div>
-
+	</div>
 
 
 

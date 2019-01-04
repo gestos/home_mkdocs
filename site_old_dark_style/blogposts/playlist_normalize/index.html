@@ -27,7 +27,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
-	<title>E-Liquid Calculator - theme test</title>
+	<title>playlist-converter - theme test</title>
 </head>
 
 <body>
@@ -119,13 +119,13 @@
 			</li>
 			
 			<li class="blogpost_link">
-				<a href="../playlist_normalize/">playlist-converter</a>
+				<a href="./">playlist-converter</a>
 				<br>
 				20. Dec 2018
 			</li>
 			
 			<li class="blogpost_link">
-				<a href="./">E-Liquid Calculator</a>
+				<a href="../eliqrechner/">E-Liquid Calculator</a>
 				<br>
 				01. Sep 2018
 			</li>
@@ -166,10 +166,75 @@
 	</div>
 
 	<div class="maincolumn">
-		<div class="content_c">
-		<p>Hier ist ein <a href="https://gestos.de/liquidrechner/">E-Liquid-Rechner</a><br />
-So was gibt's <a href="http://e-liquid-recipes.com/create">anderswo</a> schon fast genausogut ;), aber der hiesige ist für meine Bedürfnisse angepasst.</p>
-		</div>
+		<p>this script will read the file locations from a playlist and  </p>
+<ul>
+<li>create a new timestamp-named folder either in a specified location or the users $HOME path </li>
+<li>copy the mp3 files to the newly created folder </li>
+<li>set all files to the same volume level </li>
+<li>write a new playlist of relative pathnames to the directory</li>
+</ul>
+<p>setting the volume is done by way of <a href="https://www.mankier.com/1/mp3gain">mp3gain</a>'s "-r" and "-d" flag. Afaics the default base value would be 89db, so </p>
+<pre><code>mp3gain -r -d6
+</code></pre>
+
+<p>would be equal to 89db +6db = 95db</p>
+<h2 id="script">script</h2>
+<pre><code class="bash">#!/bin/bash
+OLDIFS=$IFS
+IFS='
+'
+
+printf &quot;looking for mp3gain... &quot;
+command -v mp3gain || (printf &quot;this script depends on mp3gain, which is not present on this computer. exiting\n&quot; &amp;&amp; exit 0)
+
+
+if [[ -z $@ ]]; then
+echo &quot;usage: pass a playlist as first parameter and a destination basepath as optional second parameter&quot; &amp;&amp; exit 1
+fi
+
+defaultdir=$HOME
+arg1=$(file -b $1)
+arg2=$(file -b ${2:-$HOME})
+colr='\033[0;34m'
+off='\033[0m'
+
+
+if [[ ( ${arg1,,} != *playlist* ) || ( ${arg1,,} == error* ) ]]; then
+echo &quot;please pass a valid playlist as first argument&quot;
+exit 1
+fi
+
+if [[ -z $2 ]]; then
+echo &quot;you can specify a destination path as second parameter... defaulting to ${HOME}&quot; 
+fi
+
+pllist=$(/usr/bin/basename $1)
+tstamp=$(date +%Y_%j_%H%M%S)
+destpth=${2:-$HOME}
+destin=${destpth%/}/00_playlists_normalized/&quot;${pllist%.*}&quot;-&quot;${tstamp}&quot;
+
+read -n 1 -p $'normalize \e[34m'&quot;${1}&quot;$'\e[0m'&quot; in &quot;$'\e[34m'&quot;${destin}&quot;$'\e[0m'&quot; [y/n]&quot; yn
+    case &quot;$yn&quot; in
+        [Yy] ) printf &quot;\n&quot;;;
+        * ) printf &quot;\n&quot; &amp;&amp; exit 0;;
+    esac
+
+printf &quot;creating a destination directory at ${colr}${destin}${off}... &quot;
+mkdir -p $destin &amp;&amp; printf &quot;ok\n&quot;
+
+printf &quot;copying files to ${colr}${destin}${off}...&quot;
+for mp3_file in $(grep &quot;^[^#]&quot; $1 | sed 's/\r$//'); do cp $mp3_file $destin; done &amp;&amp; printf &quot;ok\n&quot;
+
+printf &quot;${colr}applying uniform gain${off}\n&quot;
+mp3gain -r -c -k ${destin}/*mp3
+
+printf &quot;rewriting playlist for normalized directory to${colr}${destin}/playlist_${tstamp}.m3u${off}...\n&quot;
+for i in $(grep &quot;^[^#]&quot; $1); do echo ${i##/*/} &gt;&gt; $destin/playlist_${tstamp}.m3u; done &amp;&amp; printf &quot;ok \n&quot;
+
+IFS=$OLDIFS
+</code></pre>
+
+<p><a href="https://raw.githubusercontent.com/gestos/keuch/master/code_box/bourne/list2norm">save as</a></p>
 	</div>
 	</div>
 

@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	{%- block styles %}
 	<link href="{{ 'styles.css'|url }}" rel="stylesheet">
+	<!-- <link href="{{ 'codehilite.css'|url }}" rel="stylesheet"> -->
 	<link href="{{ 'css/bootstrap.min.css'|url }}" rel="stylesheet">
 	<link href="{{ 'css/font-awesome.min.css'|url }}" rel="stylesheet">
 	<link href="{{ 'css/base.css'|url }}" rel="stylesheet">
@@ -57,14 +58,18 @@
 
 
 
+	<div class="header"></div>
+
+	<div class="main_frame">
 
 	<div class="navtoc">
 		<ul>
-			<li><a href="{{base_url|url}}">home</a></i>
+			<li id="homelink"><a href="{{base_url|url}}">home</a></i>
 			{% for item in mitdatum|sort(reverse=True) %}
-			<li>
-				{{item.strftime('%d. %b %Y')}}<br>
+			<li class="blogpost_link">
 				<a href="{{mitdatum[item][1]|url}}">{{mitdatum[item][0]}}</a>
+				<br>
+				{{item.strftime('%d. %b %Y')}}
 			</li>
 			{%endfor%}
 
@@ -78,9 +83,11 @@
 	</div>
 
 	<div class="maincolumn">
+		<div class="content_c">
 		{{page.content}}
+		</div>
 	</div>
-
+	</div>
 
 
 

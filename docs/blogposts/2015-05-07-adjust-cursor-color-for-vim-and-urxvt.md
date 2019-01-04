@@ -2,7 +2,7 @@
 layout: post
 title: adjust cursor color for vim and urxvt
 categories:
-date: 2015-05-07 19:39:59
+date: 2015-05-07 12:00:00 
 ---
 
 Whenever I used a dark colour scheme for vim (like the excellent [muon](https://github.com/gregsexton/Muon) or [getafe](https://github.com/larssmit/vim-getafe/tree/master/colors), I find myself lost beacuse the usually black cursor of my urxvt wouldnt adjust to the dark colour theme. I found that this cant be tweaked in vim, but one can change the color of the urxvt terminal; so, for my needs, putting the following into $HOME/.Xresources: 

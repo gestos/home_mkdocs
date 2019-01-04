@@ -15,7 +15,7 @@ setting the volume is done by way of [mp3gain](https://www.mankier.com/1/mp3gain
 ~~~
 mp3gain -r -d6
 ~~~
-would be 89db +6db = 95db
+would be equal to 89db +6db = 95db
 
 
 ## script

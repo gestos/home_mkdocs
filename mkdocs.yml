@@ -5,5 +5,5 @@ theme:
   highlightjs: true
   hljs_style: github
   hljs_languages:
-    - yaml
-    - bash
+   - yaml
+   - bash

@@ -27,7 +27,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
-	<title>E-Liquid Calculator - theme test</title>
+	<title>css completion in vim - theme test</title>
 </head>
 
 <body>
@@ -125,7 +125,7 @@
 			</li>
 			
 			<li class="blogpost_link">
-				<a href="./">E-Liquid Calculator</a>
+				<a href="../eliqrechner/">E-Liquid Calculator</a>
 				<br>
 				01. Sep 2018
 			</li>
@@ -155,7 +155,7 @@
 			</li>
 			
 			<li class="blogpost_link">
-				<a href="../2015-05-04-css-completion-in-vim/">css completion in vim</a>
+				<a href="./">css completion in vim</a>
 				<br>
 				04. May 2015
 			</li>
@@ -166,10 +166,13 @@
 	</div>
 
 	<div class="maincolumn">
-		<div class="content_c">
-		<p>Hier ist ein <a href="https://gestos.de/liquidrechner/">E-Liquid-Rechner</a><br />
-So was gibt's <a href="http://e-liquid-recipes.com/create">anderswo</a> schon fast genausogut ;), aber der hiesige ist für meine Bedürfnisse angepasst.</p>
-		</div>
+		<pre><code class="text">:set omnifunc=csscomplete#CompleteCSS 
+</code></pre>
+
+<p>and the ctrl-x+ctrl-o will give the possible completions!</p>
+<p>see <a href="https://docs.oseems.com/general/application/vim/auto-complete-css">here</a><br />
+and <a href="http://vim.wikia.com/wiki/Omni_completion">here</a></p>
+<p>the first one explains it very nicely and has a screenshot, too :-)</p>
 	</div>
 	</div>
 

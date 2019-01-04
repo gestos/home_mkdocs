@@ -159,11 +159,6 @@ for xfile in xlfilelist:
 
 
 ```python
-
-```
-
-
-```python
 #### produce a unified frame with all data and sort it by timstamp and agentname
 bigframeii=pd.concat(framelist)
 bigframeii.sort_values(['tstamp','agent'],inplace=True)
@@ -298,11 +293,6 @@ bigframeii.head(2)
 
 
 ```python
-
-```
-
-
-```python
 Datum_MIN = bigframeii.tstamp.dt.date.min()
 Datum_MAX = bigframeii.tstamp.dt.date.max()
 
@@ -333,12 +323,6 @@ kzdata=bigframeii.loc[Wunschzeitraum & Kernzeit].copy()
 kzdata_reindex=kzdata.set_index(['tstamp','ort']).copy() # timestamps und Standort als neue Indizes
 kzdata_byday=kzdata_reindex.groupby([pd.TimeGrouper('D', level='tstamp'), pd.Grouper(level='ort')]).sum() # nach Tagen gruppiert und alle Zahlen summiert
 ```
-
-
-```python
-
-```
-
 
 ```python
 def plotzi(frame):
@@ -393,6 +377,6 @@ plotzi(kzdata_byday)
 ```
 ## example plots:
 
-<a href="../../images/Agenten_2018_05_01_bis_2018_06_01.png" target="_blank"><img src="../../images/Agenten_2018_05_01_bis_2018_06_01.png" alt="agent data" width=200 /></a>
-<a href="../../images/Verteilung_am_Tag_2017u2018.png" target="_blank"><img src="../../images/Verteilung_am_Tag_2017u2018.png" alt="hotline data" width=200 /></a>
-<a href="../../images/Verteilung_hgw_ber.png" target="_blank"><img src="../../images/Verteilung_hgw_ber.png" alt="site related distribution" width=200 /></a>
+<a href="../../images/Agenten_2018_05_01_bis_2018_06_01.png" target="_blank"><img class="thumbnail" src="../../images/Agenten_2018_05_01_bis_2018_06_01.png" alt="agent data" width=200 /></a>
+<a href="../../images/Verteilung_am_Tag_2017u2018.png" target="_blank"><img class="thumbnail" src="../../images/Verteilung_am_Tag_2017u2018.png" alt="hotline data" width=200 /></a>
+<a href="../../images/Verteilung_hgw_ber.png" target="_blank"><img class="thumbnail" src="../../images/Verteilung_hgw_ber.png" alt="site related distribution" width=200 /></a>

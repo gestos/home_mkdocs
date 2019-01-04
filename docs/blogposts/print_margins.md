@@ -7,7 +7,7 @@ date:   2018-12-28 17:40:00
 besides the css settings, firefox will need to be adjusted if one wants to use the full area of an A4 paper sheet.  
 
 [this](https://support.mozilla.org/en-US/questions/1061569) mozilla blog post is in the right direction, but there's a third configuration options for the margins called ***print.print_edge***, see screenshot:
-![alt text](/images/printmargins_firefox.png "ff printmargins")  
+<img class="full" src="/images/printmargins_firefox.png" alt="ff printmargins" />
 of course, the same options shown here for ***bottom*** can be set for ***top***, ***left*** and ***right*** as well.
 
 it seems like the relevant options are the *print.print_unwriteable_margin_* options, but that may depend on which printer you select for the print preview. There seems to be no well-structured mozilla authorized manual for this stuff and I'm too lazy to dig deeper into it right now.

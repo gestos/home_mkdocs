@@ -27,7 +27,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
-	<title>E-Liquid Calculator - theme test</title>
+	<title>adjust cursor color for vim and urxvt - theme test</title>
 </head>
 
 <body>
@@ -125,7 +125,7 @@
 			</li>
 			
 			<li class="blogpost_link">
-				<a href="./">E-Liquid Calculator</a>
+				<a href="../eliqrechner/">E-Liquid Calculator</a>
 				<br>
 				01. Sep 2018
 			</li>
@@ -149,7 +149,7 @@
 			</li>
 			
 			<li class="blogpost_link">
-				<a href="../2015-05-07-adjust-cursor-color-for-vim-and-urxvt/">adjust cursor color for vim and urxvt</a>
+				<a href="./">adjust cursor color for vim and urxvt</a>
 				<br>
 				07. May 2015
 			</li>
@@ -166,10 +166,13 @@
 	</div>
 
 	<div class="maincolumn">
-		<div class="content_c">
-		<p>Hier ist ein <a href="https://gestos.de/liquidrechner/">E-Liquid-Rechner</a><br />
-So was gibt's <a href="http://e-liquid-recipes.com/create">anderswo</a> schon fast genausogut ;), aber der hiesige ist für meine Bedürfnisse angepasst.</p>
-		</div>
+		<p>Whenever I used a dark colour scheme for vim (like the excellent <a href="https://github.com/gregsexton/Muon">muon</a> or <a href="https://github.com/larssmit/vim-getafe/tree/master/colors">getafe</a>, I find myself lost beacuse the usually black cursor of my urxvt wouldnt adjust to the dark colour theme. I found that this cant be tweaked in vim, but one can change the color of the urxvt terminal; so, for my needs, putting the following into $HOME/.Xresources: </p>
+<pre><code class="text">URxvt*cursorColor:  #D6C0FB
+URxvt*cursorBlink:  on
+</code></pre>
+
+<p>does the job pretty satisfyingly :-)<br />
+(for reloading the Xresources, use xrdb -load .Xresources. put the same command into ~/.xinitrc to have it loaded on X startup)</p>
 	</div>
 	</div>
 
