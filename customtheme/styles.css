@@ -1,5 +1,5 @@
 body {
-	background-image: linear-gradient(to right, #e4e4e4 2%, #939393 70%);
+	background-image: linear-gradient(to right, #b5c9d8 2%, #939393 70%);
 	font-family: sans;
 	margin: 0;
 }
@@ -23,13 +23,49 @@ code {
 
 .header {
 	display: block;
-	height: 100px;
-	background-image: linear-gradient(to top,#0000 50% ,#0000004d);
-}
-
-.main_frame {
+	height: 105px;
+	background-image: radial-gradient(circle at center, #eaff5be6, #0000 25%);
 	width: 85%;
 	margin: 0 auto;
+	text-align: center;
+}
+
+#lefthead {
+	height: 100%;
+	line-height: 105px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateX(-100%);
+	margin-left: -50px;
+	width: 20em;
+	text-align: right;
+}
+
+#centerhead {
+	display: inline-block;
+	position: relative;
+	text-align: center;
+}
+#righthead {
+	height: 100%;
+	line-height: 105px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translateX(100%);
+	margin-right: -50px;
+	width: 20em;
+	text-align: left;
+}
+#lenin {
+	/*! margin: 0 auto; */
+	display: inline-block;
+	position: relative;
+}
+.main_frame {
+	width: 85%;
+	margin: 25px auto;
 }
 
 .navtoc {

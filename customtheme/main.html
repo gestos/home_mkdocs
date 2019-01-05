@@ -27,6 +27,7 @@
 
 	<!-- <script src="{{ 'js/jquery-1.10.2.min.js'|url }}" defer></script>
 	<script src="{{ 'js/bootstrap.min.js'|url }}" defer></script>-->
+	<script src="/js/extra.js"></script>
 	{%- if config.theme.highlightjs %}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 	{%- for lang in config.theme.hljs_languages %}
@@ -58,7 +59,10 @@
 
 
 
-	<div class="header"></div>
+	<div class="header">
+	{% include 'head.html' %}
+	</div>
+
 
 	<div class="main_frame">
 
