@@ -28,7 +28,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
-	<title>some shell tips - theme test</title>
+	<title>some shell tips - gestos</title>
 </head>
 
 <body>
@@ -202,7 +202,7 @@ termcapinfo xterm* ti@:te@  # this enables using the scrollbar of the terminal w
 
 <p>with this configuration, I can scroll up the terminal window (eg to view some output), but whenever the time in the <code>caption</code> changes, the scroll buffer will return to the bottom of the terminal because of the change in the caption line<br />
 to avoid this, one can use screens "copy mode". The <code>caption</code> will stay in the foreground, while you can use the arrow keys to move up and down through the terminal output.</p>
-<pre><code class="text">Ctrl+A Esc to go in copy mode.
+<pre><code>Ctrl+A Esc to go in copy mode.
 Then use arrows or PageUp/PageDown to move through the scroll buffer.
 To exit copy mode, just hit Esc.
 </code></pre>

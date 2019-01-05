@@ -6,7 +6,7 @@ body {
 }
 
 body a {
-	color: #033e8a;
+	color: #001eff;
 	text-decoration: none;
 }
 body a:hover {
@@ -81,7 +81,7 @@ code {
 }
 
 .navtoc .blogpost_link {
-	color: cadetblue;
+	color: black;
 	font-size: 9px;
 }
 .navtoc .blogpost_link a {
@@ -89,11 +89,11 @@ code {
 }
 .navtoc #homelink {
 	font-size: 9px;
-	color: yellow;
+	color: white;
 }
 .navtoc #homelink a {
 	font-size: 13px;
-	color: darksalmon;
+	color: white;
 }
 
 .maincolumn {
@@ -113,8 +113,14 @@ code {
 
 .content_c p {
 	margin: 2px 2px;
-	border-right: #9d9e9e 2px dotted;
+	border-right: #b5c9d8 1px dashed;
 	padding: 0px 3px;
+}
+.content_c ul {
+	margin: 2px 2px;
+	border-right: #b5c9d8 1px dashed;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .content_c .hljs {
 	display: block;

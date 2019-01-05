@@ -27,7 +27,7 @@ termcapinfo xterm* ti@:te@	# this enables using the scrollbar of the terminal wi
 with this configuration, I can scroll up the terminal window (eg to view some output), but whenever the time in the `caption` changes, the scroll buffer will return to the bottom of the terminal because of the change in the caption line  
 to avoid this, one can use screens "copy mode". The `caption` will stay in the foreground, while you can use the arrow keys to move up and down through the terminal output.
 
-``` text
+```
 Ctrl+A Esc to go in copy mode.
 Then use arrows or PageUp/PageDown to move through the scroll buffer.
 To exit copy mode, just hit Esc.
