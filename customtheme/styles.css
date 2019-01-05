@@ -141,6 +141,7 @@ code {
 img.full {
 	display: block;
 	margin: 1em auto;
+	width: 95%;
 }
 img.thumbnail {
 	margin: 3px;
