@@ -1,0 +1,36 @@
+
+	{% set mitdatum = dict()%}
+	{% set ohnedatum = dict()%}
+	{% for i in nav%}
+	{% if i.is_section %}
+
+	{%for kid in i.children%}
+	{%if kid.is_page%}
+	{%if kid.meta.date%}
+	{% set x=mitdatum.__setitem__(kid.meta.date,(kid.title,kid.url)) %}
+	{%else%}
+	{% set x=ohnedatum.__setitem__(kid.title,kid.url) %}
+	{%endif%}
+	{%endif%}
+	{%endfor%}
+	{% endif %}
+	{% endfor %}
+	<div class="navtoc">
+		<ul>
+			<li id="homelink"><a href="{{base_url|url}}">home</a></i>
+			{% for datum in mitdatum|sort(reverse=True) %}
+			<li class="blogpost_link">
+				<a href="{{mitdatum[datum][1]|url}}">{{mitdatum[datum][0]}}</a>
+				<br>
+				{{datum.strftime('%d. %b %Y')}}
+			</li>
+			{%endfor%}
+
+			{% for item in ohnedatum|sort %}
+			<li>
+				undatiert<br>
+				<a href="{{ohnedatum[item]|url}}">{{item}}</a>
+			</li>
+			{%endfor%}
+		</ul>
+	</div>
