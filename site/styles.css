@@ -4,7 +4,6 @@ body {
 	margin: 0;
 	overflow-y: scroll;
 }
-
 body a {
 	color: #0b4b93;
 	text-decoration: none;
@@ -14,10 +13,10 @@ outline: 0;
 body a:hover {
 	text-decoration: underline;
 }
-
 body a:active, a:focus {
 color: white;
 }
+
 code {
 	color: #022c0b;
 	font-family: Mono;
@@ -35,7 +34,6 @@ code {
 	margin: 0 auto;
 	text-align: center;
 }
-
 .centerhead {
 	display: inline-block;
 	position: relative;
@@ -93,6 +91,7 @@ code {
 	display: inline-block;
 	position: relative;
 }
+
 .main_frame {
 	width: 85%;
 	margin: 25px auto;
@@ -108,7 +107,6 @@ code {
 	padding-left: 1em;
 	margin: 0;
 }
-
 .navtoc .blogpost_link {
 	color: black;
 	font-size: 9px;
@@ -132,14 +130,12 @@ code {
 	display: block;
 	position: relative;
 }
-
 .content_c {
 	width: 75%;
 	margin: 0 auto;
 	color: #171717;
 	font-size: 14px;
 }
-
 .content_c p {
 	margin: 2px 2px;
 	border-right: #b5c9d8 1px dashed;
@@ -165,9 +161,8 @@ code {
 	color: #4c545f;
 	font-style: italic;
 }
-
 .content_c h1,h2,h3,h4 {
-	text-shadow: -1px 3px 1px #0039ae4d;
+	text-shadow: -1px 2px 1px #b5c9d8;
 }
 .content_c h1,h2 {
 	width: calc(50vw - 15%);
@@ -183,17 +178,6 @@ img.thumbnail {
 	margin: 3px;
 	vertical-align: middle;
 }
-
-
-
-.header_menu_r {
-	color: magenta;
-	float: left;
-	display: block;
-	margin-right: 25px;
-}
-
-
 
 .teaser {
 	max-height: 350px;
@@ -214,8 +198,8 @@ padding-top: 10px;
 	padding-top: 1em;
 }
 .link_article a{
-	color: #893737;
-	text-shadow: 1px 1px #ffa664;
+	color: #fff;
+	text-shadow: 1px 1px #175498;
 	border-radius: 50px;
 	padding: 0 10px;
 	font-style: italic;
@@ -229,8 +213,6 @@ margin: 30px auto;
 box-shadow: 0 0 2px 0 #b5c9d8;
 color: #a6ad7a;
 }
-
-
 .article_header {
 	color: #727272;
 	text-align: right;
@@ -246,4 +228,9 @@ color: #a6ad7a;
 	padding-right: 25px;
 	background-color: #939393;
 	border-radius: 30px;
+}
+
+.footer {
+	clear:both;
+	margin-bottom: 3em;
 }
