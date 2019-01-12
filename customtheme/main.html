@@ -41,25 +41,23 @@
 
 <body>
 
-
-
 	<div class="header">
-	{% include 'head.html' %}
+		{% include 'head.html' %}
 	</div>
 
 
 	<div class="main_frame">
 
-	{% include 'nav-toc.html' %}
-
-	<div class="maincolumn">
-		<div class="content_c">
-		{{page.content}}
+		{% include 'nav-toc.html' %}
+		<div class="maincolumn">
+			<div class="content_c">
+				{% if page.title|lower == 'blog' %}
+				{% include 'blog.html' %}
+				{% else %}
+				{% include 'singlepage.html' %}
+				{% endif %}
+			</div>
 		</div>
 	</div>
-	</div>
-
-
-
 
 </body>

@@ -1,7 +1,8 @@
 ---
+author: gestos
 title: E-Liquid Calculator
-categories:
-date:   2018-09-01 11:59:39
+categories: vaping eliquid
+date:   2018-08-21 14:59:39
 ---
 
 Hier ist ein [E-Liquid-Rechner](https://gestos.de/liquidrechner/)  
