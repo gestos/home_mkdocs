@@ -1,5 +1,7 @@
 <div class="centerhead">
+	<a href="{{base_url|url}}">
 	<img id="lenin" src="/images/me1.png" alt="Bild, leninartig" title="Lenin?" size="95" onmouseover="iswp(this)" onmouseout="iswp2(this)" />
+	</a>
 	<div class="lefthead">
 		<ul>
 			<li>
@@ -15,7 +17,7 @@
 		<ul>
 			<li>
 			{% for element in nav %}
-			{% if element.title|lower == "about" %}
+			{% if "about" in (element.url|lower) %}
 			<a href="{{element.url|url}}">about</a>
 			{% endif %}
 			{% endfor %}

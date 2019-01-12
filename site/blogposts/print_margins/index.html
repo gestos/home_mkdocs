@@ -28,91 +28,55 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
-	<title>A4 printing - gestos</title>
+	<title>printmargins - gestos</title>
 </head>
 
 <body>
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
 
 	<div class="header">
-	<div class="centerhead">
+		<div class="centerhead">
+	<a href="../../../..">
 	<img id="lenin" src="/images/me1.png" alt="Bild, leninartig" title="Lenin?" size="95" onmouseover="iswp(this)" onmouseout="iswp2(this)" />
+	</a>
 	<div class="lefthead">
 		<ul>
 			<li>
-			blog
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<a href="../../blog/">blog</a>
+			
+			
 			</li>
 		</ul>
 	</div>
 	<div class="righthead">
 		<ul>
 			<li>
-				about
+			
+			
+			
+			
+			<a href="../../about/">about</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			</li>
 		</ul>
 	</div>
@@ -123,20 +87,96 @@
 
 	<div class="main_frame">
 
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<div class="navtoc">
 		<ul>
-			<li id="homelink"><a href="../../../..">home</a></i>
+			<li id="homelink"><a href="../../../..">home</a></li>
 			
 			<li class="blogpost_link">
-				<a href="../some_shell_tips/">some shell tips</a>
+				<a href="./">printmargins</a>
 				<br>
-				03. Jan 2019
+				09. Jan 2019
 			</li>
 			
 			<li class="blogpost_link">
-				<a href="./">A4 printing</a>
+				<a href="../../new_section/some_shell_tips/">some shell tips</a>
 				<br>
-				28. Dec 2018
+				03. Jan 2019
 			</li>
 			
 			<li class="blogpost_link">
@@ -148,7 +188,7 @@
 			<li class="blogpost_link">
 				<a href="../eliqrechner/">E-Liquid Calculator</a>
 				<br>
-				01. Sep 2018
+				21. Aug 2018
 			</li>
 			
 			<li class="blogpost_link">
@@ -185,10 +225,14 @@
 			
 		</ul>
 	</div>
+		<div class="maincolumn">
+			<div class="content_c">
+				
+				<span class="article_header">
+2019-01-09 11:59:39, by gestos
+</span>
 
-	<div class="maincolumn">
-		<div class="content_c">
-		<p>besides the css settings, firefox will need to be adjusted if one wants to use the full area of an A4 paper sheet.  </p>
+<p>besides the css settings, firefox will need to be adjusted if one wants to use the full area of an A4 paper sheet.  </p>
 <p><a href="https://support.mozilla.org/en-US/questions/1061569">this</a> mozilla blog post is in the right direction, but there's a third configuration options for the margins called <strong><em>print.print_edge</em></strong>, see screenshot:
 <img class="full" src="/images/printmargins_firefox.png" alt="ff printmargins" />
 of course, the same options shown here for <strong><em>bottom</em></strong> can be set for <strong><em>top</em></strong>, <strong><em>left</em></strong> and <strong><em>right</em></strong> as well.</p>
@@ -197,11 +241,13 @@ setting all of those to zero will give you the full page for printing, but will 
 <p><a href="https://wiki.mozilla.org/Firefox:Printing_and_Page_Setup">more mozilla on this topic</a></p>
 <p>since I don't want the page counter removed just for the one use case that I'm fiddling with, I set the top margin to 20. The numbers seem to refer to the percenteage of an inch (see link above). I checked manually, the counter won't appear below a top margin of 20, which seems stupid, because it will respect that margin, leaving blank margin to the page edge...</p>
 <p>Also, I changed the A4 width + height settings in my css to a value slightly lower than standard (200mm instead of 210mm width, 290mm instead of 297mm height). The "real" standard measurements seem to cause a page break even with all margins set to zero. Using these slightly smaller values however works ok.</p>
+
+<span class="article_footer">
+	tags: a4 printing mozilla firefox
+</span>
+				
+			</div>
 		</div>
 	</div>
-	</div>
-
-
-
 
 </body>
