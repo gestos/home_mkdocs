@@ -1,28 +1,29 @@
-<div class="centerhead">
-	<a href="{{base_url|url}}">
-	<img id="lenin" src="/images/me1.png" alt="Bild, leninartig" title="Lenin?" size="95" onmouseover="iswp(this)" onmouseout="iswp2(this)" />
-	</a>
-	<div class="lefthead">
-		<ul>
-			<li>
-			{% for element in nav %}
-			{% if element.title|lower == "blog" %}
-			<a href="{{element.url|url}}">blog</a>
-			{% endif %}
-			{% endfor %}
-			</li>
-		</ul>
-	</div>
-	<div class="righthead">
-		<ul>
-			<li>
-			{% for element in nav %}
-			{% if "about" in (element.url|lower) %}
-			<a href="{{element.url|url}}">about</a>
-			{% endif %}
-			{% endfor %}
-			</li>
-		</ul>
+<div class="header">
+	<div class="centerhead">
+		<a href="{{base_url|url}}">
+			<img id="lenin" src="/images/me1.png" alt="Bild, leninartig" title="Lenin?" size="95" onmouseover="iswp(this)" onmouseout="iswp2(this)" />
+		</a>
+		<div class="lefthead">
+			<ul>
+				<li>
+					{% for element in nav %}
+					{% if element.title|lower == "blog" %}
+					<a href="{{element.url|url}}">blog</a>
+					{% endif %}
+					{% endfor %}
+				</li>
+			</ul>
+		</div>
+		<div class="righthead">
+			<ul>
+				<li>
+					{% for element in nav %}
+					{% if "about" in (element.url|lower) %}
+					<a href="{{element.url|url}}">about</a>
+					{% endif %}
+					{% endfor %}
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
-
