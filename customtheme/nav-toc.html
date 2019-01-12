@@ -17,7 +17,7 @@
 	{% endfor %}
 	<div class="navtoc">
 		<ul>
-			<li id="homelink"><a href="{{base_url|url}}">home</a></i>
+			<li id="homelink"><a href="{{base_url|url}}">home</a></li>
 			{% for datum in mitdatum|sort(reverse=True) %}
 			<li class="blogpost_link">
 				<a href="{{mitdatum[datum][1]|url}}">{{mitdatum[datum][0]}}</a>

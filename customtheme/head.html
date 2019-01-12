@@ -3,14 +3,22 @@
 	<div class="lefthead">
 		<ul>
 			<li>
-			blog
+			{% for element in nav %}
+			{% if element.title|lower == "blog" %}
+			<a href="{{element.url|url}}">blog</a>
+			{% endif %}
+			{% endfor %}
 			</li>
 		</ul>
 	</div>
 	<div class="righthead">
 		<ul>
 			<li>
-				about
+			{% for element in nav %}
+			{% if element.title|lower == "about" %}
+			<a href="{{element.url|url}}">about</a>
+			{% endif %}
+			{% endfor %}
 			</li>
 		</ul>
 	</div>

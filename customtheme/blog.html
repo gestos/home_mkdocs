@@ -1,1 +1,21 @@
-{%extends main.html %}
+{% for objekt in nav %}
+{% if objekt.is_section and objekt.title|lower == 'blogposts' %}
+
+{% set postliste=objekt.children|sort(attribute='meta.date',reverse=true) %}
+
+
+{% for artikel in postliste %}
+<div class="teaser">
+	<span class="headline_excerpt">{{ artikel.meta.date.strftime('%d. %b %Y') }}</span>
+	<h1>{{artikel.title}}</h1>
+	{{artikel.content}}
+</div>
+<span class="link_article"><a href="{{artikel.url|url}}">more...</a></span>
+<hr class="sepline">
+{% endfor %}
+
+
+
+
+{% endif %}
+{% endfor %}

@@ -40,60 +40,24 @@
 </head>
 
 <body>
-	{% set mitdatum = dict()%}
-	{% set ohnedatum = dict()%}
-	{% for i in nav%}
-	{% if i.is_section %}
-
-	{%for kid in i.children%}
-	{%if kid.is_page%}
-	{%if kid.meta.date%}
-	{% set x=mitdatum.__setitem__(kid.meta.date,(kid.title,kid.url)) %}
-	{%else%}
-	{% set x=ohnedatum.__setitem__(kid.title,kid.url) %}
-	{%endif%}
-	{%endif%}
-	{%endfor%}
-	{% endif %}
-	{% endfor %}
-
-
 
 	<div class="header">
-	{% include 'head.html' %}
+		{% include 'head.html' %}
 	</div>
 
 
 	<div class="main_frame">
 
-	<div class="navtoc">
-		<ul>
-			<li id="homelink"><a href="{{base_url|url}}">home</a></i>
-			{% for item in mitdatum|sort(reverse=True) %}
-			<li class="blogpost_link">
-				<a href="{{mitdatum[item][1]|url}}">{{mitdatum[item][0]}}</a>
-				<br>
-				{{item.strftime('%d. %b %Y')}}
-			</li>
-			{%endfor%}
-
-			{% for item in ohnedatum|sort %}
-			<li>
-				undatiert<br>
-				<a href="{{ohnedatum[item]|url}}">{{item}}</a>
-			</li>
-			{%endfor%}
-		</ul>
-	</div>
-
-	<div class="maincolumn">
-		<div class="content_c">
-		{{page.content}}
+		{% include 'nav-toc.html' %}
+		<div class="maincolumn">
+			<div class="content_c">
+				{% if page.title|lower == 'blog' %}
+				{% include 'blog.html' %}
+				{% else %}
+				{% include 'singlepage.html' %}
+				{% endif %}
+			</div>
 		</div>
 	</div>
-	</div>
-
-
-
 
 </body>
